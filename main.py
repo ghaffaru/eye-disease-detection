@@ -39,8 +39,10 @@ def classify():
             value = 'cataract'
         elif prediction == 2:
             value = 'crossed eyes'
-        else:
+        elif predictin == 3:
             value = 'glaucoma'
+        else:
+            value = 'uvetis'
         return jsonify({
             'predicted' : value
         })

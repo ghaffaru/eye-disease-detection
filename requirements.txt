@@ -12,7 +12,6 @@ Flask-WTF==0.14.2
 
 gunicorn==19.9.0
 gym==0.14.0
-h5py==2.9.0
 heapdict==1.0.0
 html5lib==1.0.1
 httptools==0.0.13
