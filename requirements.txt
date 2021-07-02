@@ -51,7 +51,7 @@ setuptools-scm==3.3.3
 
 tb-nightly==1.14.0a20190603
 
-tensorflow==2.0.0b1
+tensorflow==2.0.0
 tensorflow-datasets==1.2.0
 tensorflow-estimator==2.0.1
 tensorflow-hub==0.4.0
