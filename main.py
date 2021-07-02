@@ -19,6 +19,9 @@ def save_picture(form_picture):
     form_picture.save(picture_path)
     return picture_fn
 
+@app.route('/')
+def home():
+    return jsonify({'message': 'OK'})
 @app.route('/api/classify', methods=['POST'])
 def classify():
     if request.files['image']:
@@ -31,10 +34,13 @@ def classify():
         prediction = np.argmax(model.predict(img))
 
         if prediction == 0:
-            value = 'cat'
+            value = 'bulging'
+        elif prediction == 1:
+            value = 'cataract'
+        elif prediction == 2:
+            value = 'crossed eyes'
         else:
-            value = 'dog'
-
+            value = 'glaucoma'
         return jsonify({
             'predicted' : value
         })
@@ -42,3 +48,7 @@ def classify():
         return jsonify({
             'success': False
         })
+
+#Run server
+if __name__ == '__main__':
+    app.run(debug=True)
